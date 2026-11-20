@@ -57,7 +57,7 @@ The following libraries were used to build the OPC-UA payloads:
 
 |Library|Version|License|
 |:--|:--|:--|
-|[asyncua](https://pypi.org/project/asyncua/)|[2.x](https://pypi.org/project/asyncua/)|[LGPL-3.0](https://github.com/FreeOpcUa/opcua-asyncio/blob/master/COPYING.LESSER)|
+|[asyncua](https://pypi.org/project/asyncua/)|[2.1.0](https://pypi.org/project/asyncua/2.1.0/)|[LGPL-3.0](https://github.com/FreeOpcUa/opcua-asyncio/blob/master/COPYING.LESSER)|
 
 ## Usage
 This section describes how to initially deploy and execute the abilities present within the OPC-UA plugin.
@@ -74,196 +74,214 @@ This section describes how to initially deploy and execute the abilities present
 #### OPC-UA - Read Node
 Read the value of an OPC-UA node (variable). Discloses a live process value,
 setpoint, or status held by the server.
-  
 
-__Usage:__  
-linux: (sh)  
-```
-COMMAND>> ./opcua_cli #{opcua.server.endpoint} --port #{opcua.server.port} read "#{opcua.node.id}"
+__Ability Command:__
+<details open>
+<summary>Windows (psh)</summary>
+<br>
 
+```caldera
+.\opcua_cli.exe #{opcua.server.endpoint} --port #{opcua.server.port} read "#{opcua.node.id}"
 ```  
 
-__Facts:__  
-- `opcua.server.endpoint`: Target OPC-UA endpoint (host/IP, or a full opc.tcp:// URL)
-- `opcua.server.port`: Target OPC-UA TCP port (default 4840)
-- `opcua.node.id`: NodeId of the target node (read, or written for Write Node)
-windows: (psh)  
-```
-COMMAND>> .\opcua_cli.exe #{opcua.server.endpoint} --port #{opcua.server.port} read "#{opcua.node.id}"
+</details>
+<details>
+<summary>Linux (sh)</summary>
+<br>
 
+```caldera
+./opcua_cli #{opcua.server.endpoint} --port #{opcua.server.port} read "#{opcua.node.id}"
 ```  
 
-__Facts:__  
-- `opcua.server.endpoint`: Target OPC-UA endpoint (host/IP, or a full opc.tcp:// URL)
-- `opcua.server.port`: Target OPC-UA TCP port (default 4840)
-- `opcua.node.id`: NodeId of the target node (read, or written for Write Node)
-darwin: (sh)  
-```
-COMMAND>> ./opcua_cli_darwin #{opcua.server.endpoint} --port #{opcua.server.port} read "#{opcua.node.id}"
+</details>
+<details>
+<summary>Darwin (sh)</summary>
+<br>
 
+```caldera
+./opcua_cli_darwin #{opcua.server.endpoint} --port #{opcua.server.port} read "#{opcua.node.id}"
 ```  
 
+</details>
+<br>
+
 __Facts:__  
-- `opcua.server.endpoint`: Target OPC-UA endpoint (host/IP, or a full opc.tcp:// URL)
-- `opcua.server.port`: Target OPC-UA TCP port (default 4840)
-- `opcua.node.id`: NodeId of the target node (read, or written for Write Node)
+| Name | Description | Type |
+|:-----|:------------|:----:|
+| `opcua.server.endpoint` | Target OPC-UA endpoint (host/IP, or a full opc.tcp:// URL) | string |
+| `opcua.server.port` | Target OPC-UA TCP port (default 4840) | int |
+| `opcua.node.id` | NodeId of the target node (read, or written for Write Node) | string |
+
 #### OPC-UA - Browse Address Space
 Browse an OPC-UA server's address space from a starting node, enumerating the
 nodes (objects and variables) it exposes. Maps out the process model for
 targeting.
-  
 
-__Usage:__  
-linux: (sh)  
-```
-COMMAND>> ./opcua_cli #{opcua.server.endpoint} --port #{opcua.server.port} browse --node "#{opcua.browse.node}" --depth #{opcua.browse.depth}
+__Ability Command:__
+<details open>
+<summary>Windows (psh)</summary>
+<br>
 
+```caldera
+.\opcua_cli.exe #{opcua.server.endpoint} --port #{opcua.server.port} browse --node "#{opcua.browse.node}" --depth #{opcua.browse.depth}
 ```  
 
-__Facts:__  
-- `opcua.server.endpoint`: Target OPC-UA endpoint (host/IP, or a full opc.tcp:// URL)
-- `opcua.server.port`: Target OPC-UA TCP port (default 4840)
-- `opcua.browse.node`: NodeId to start browsing from (e.g. i=85, the Objects folder)
-- `opcua.browse.depth`: How many levels deep to browse
-windows: (psh)  
-```
-COMMAND>> .\opcua_cli.exe #{opcua.server.endpoint} --port #{opcua.server.port} browse --node "#{opcua.browse.node}" --depth #{opcua.browse.depth}
+</details>
+<details>
+<summary>Linux (sh)</summary>
+<br>
 
+```caldera
+./opcua_cli #{opcua.server.endpoint} --port #{opcua.server.port} browse --node "#{opcua.browse.node}" --depth #{opcua.browse.depth}
 ```  
 
-__Facts:__  
-- `opcua.server.endpoint`: Target OPC-UA endpoint (host/IP, or a full opc.tcp:// URL)
-- `opcua.server.port`: Target OPC-UA TCP port (default 4840)
-- `opcua.browse.node`: NodeId to start browsing from (e.g. i=85, the Objects folder)
-- `opcua.browse.depth`: How many levels deep to browse
-darwin: (sh)  
-```
-COMMAND>> ./opcua_cli_darwin #{opcua.server.endpoint} --port #{opcua.server.port} browse --node "#{opcua.browse.node}" --depth #{opcua.browse.depth}
+</details>
+<details>
+<summary>Darwin (sh)</summary>
+<br>
 
+```caldera
+./opcua_cli_darwin #{opcua.server.endpoint} --port #{opcua.server.port} browse --node "#{opcua.browse.node}" --depth #{opcua.browse.depth}
 ```  
 
+</details>
+<br>
+
 __Facts:__  
-- `opcua.server.endpoint`: Target OPC-UA endpoint (host/IP, or a full opc.tcp:// URL)
-- `opcua.server.port`: Target OPC-UA TCP port (default 4840)
-- `opcua.browse.node`: NodeId to start browsing from (e.g. i=85, the Objects folder)
-- `opcua.browse.depth`: How many levels deep to browse
+| Name | Description | Type |
+|:-----|:------------|:----:|
+| `opcua.server.endpoint` | Target OPC-UA endpoint (host/IP, or a full opc.tcp:// URL) | string |
+| `opcua.server.port` | Target OPC-UA TCP port (default 4840) | int |
+| `opcua.browse.node` | NodeId to start browsing from (e.g. i=85, the Objects folder) | string |
+| `opcua.browse.depth` | How many levels deep to browse | int |
+
 #### OPC-UA - Read Endpoints
 Enumerate an OPC-UA server's endpoints and their security policies/modes.
 Reveals the transport URLs and whether the server accepts anonymous / insecure
 connections.
-  
 
-__Usage:__  
-linux: (sh)  
-```
-COMMAND>> ./opcua_cli #{opcua.server.endpoint} --port #{opcua.server.port} endpoints
+__Ability Command:__
+<details open>
+<summary>Windows (psh)</summary>
+<br>
 
+```caldera
+.\opcua_cli.exe #{opcua.server.endpoint} --port #{opcua.server.port} endpoints
 ```  
 
-__Facts:__  
-- `opcua.server.endpoint`: Target OPC-UA endpoint (host/IP, or a full opc.tcp:// URL)
-- `opcua.server.port`: Target OPC-UA TCP port (default 4840)
-windows: (psh)  
-```
-COMMAND>> .\opcua_cli.exe #{opcua.server.endpoint} --port #{opcua.server.port} endpoints
+</details>
+<details>
+<summary>Linux (sh)</summary>
+<br>
 
+```caldera
+./opcua_cli #{opcua.server.endpoint} --port #{opcua.server.port} endpoints
 ```  
 
-__Facts:__  
-- `opcua.server.endpoint`: Target OPC-UA endpoint (host/IP, or a full opc.tcp:// URL)
-- `opcua.server.port`: Target OPC-UA TCP port (default 4840)
-darwin: (sh)  
-```
-COMMAND>> ./opcua_cli_darwin #{opcua.server.endpoint} --port #{opcua.server.port} endpoints
+</details>
+<details>
+<summary>Darwin (sh)</summary>
+<br>
 
+```caldera
+./opcua_cli_darwin #{opcua.server.endpoint} --port #{opcua.server.port} endpoints
 ```  
 
+</details>
+<br>
+
 __Facts:__  
-- `opcua.server.endpoint`: Target OPC-UA endpoint (host/IP, or a full opc.tcp:// URL)
-- `opcua.server.port`: Target OPC-UA TCP port (default 4840)
+| Name | Description | Type |
+|:-----|:------------|:----:|
+| `opcua.server.endpoint` | Target OPC-UA endpoint (host/IP, or a full opc.tcp:// URL) | string |
+| `opcua.server.port` | Target OPC-UA TCP port (default 4840) | int |
+
 #### OPC-UA - Call Method
 Call an OPC-UA method exposed by an object node. Server-defined methods can
 trigger device actions (start/stop, reset, mode change); invoking one executes
 functionality through the OPC-UA API.
-  
 
-__Usage:__  
-linux: (sh)  
-```
-COMMAND>> ./opcua_cli #{opcua.server.endpoint} --port #{opcua.server.port} call-method "#{opcua.method.object}" "#{opcua.method.node}"
+__Ability Command:__
+<details open>
+<summary>Windows (psh)</summary>
+<br>
 
+```caldera
+.\opcua_cli.exe #{opcua.server.endpoint} --port #{opcua.server.port} call-method "#{opcua.method.object}" "#{opcua.method.node}"
 ```  
 
-__Facts:__  
-- `opcua.server.endpoint`: Target OPC-UA endpoint (host/IP, or a full opc.tcp:// URL)
-- `opcua.server.port`: Target OPC-UA TCP port (default 4840)
-- `opcua.method.object`: NodeId of the object that owns the method
-- `opcua.method.node`: NodeId of the method to call
-windows: (psh)  
-```
-COMMAND>> .\opcua_cli.exe #{opcua.server.endpoint} --port #{opcua.server.port} call-method "#{opcua.method.object}" "#{opcua.method.node}"
+</details>
+<details>
+<summary>Linux (sh)</summary>
+<br>
 
+```caldera
+./opcua_cli #{opcua.server.endpoint} --port #{opcua.server.port} call-method "#{opcua.method.object}" "#{opcua.method.node}"
 ```  
 
-__Facts:__  
-- `opcua.server.endpoint`: Target OPC-UA endpoint (host/IP, or a full opc.tcp:// URL)
-- `opcua.server.port`: Target OPC-UA TCP port (default 4840)
-- `opcua.method.object`: NodeId of the object that owns the method
-- `opcua.method.node`: NodeId of the method to call
-darwin: (sh)  
-```
-COMMAND>> ./opcua_cli_darwin #{opcua.server.endpoint} --port #{opcua.server.port} call-method "#{opcua.method.object}" "#{opcua.method.node}"
+</details>
+<details>
+<summary>Darwin (sh)</summary>
+<br>
 
+```caldera
+./opcua_cli_darwin #{opcua.server.endpoint} --port #{opcua.server.port} call-method "#{opcua.method.object}" "#{opcua.method.node}"
 ```  
 
+</details>
+<br>
+
 __Facts:__  
-- `opcua.server.endpoint`: Target OPC-UA endpoint (host/IP, or a full opc.tcp:// URL)
-- `opcua.server.port`: Target OPC-UA TCP port (default 4840)
-- `opcua.method.object`: NodeId of the object that owns the method
-- `opcua.method.node`: NodeId of the method to call
+| Name | Description | Type |
+|:-----|:------------|:----:|
+| `opcua.server.endpoint` | Target OPC-UA endpoint (host/IP, or a full opc.tcp:// URL) | string |
+| `opcua.server.port` | Target OPC-UA TCP port (default 4840) | int |
+| `opcua.method.object` | NodeId of the object that owns the method | string |
+| `opcua.method.node` | NodeId of the method to call | string |
+
 #### OPC-UA - Write Node
 Write a value to an OPC-UA node. Changing a command or setpoint node alters how
 the process is controlled - e.g. opening a valve or changing a drive setpoint -
 an unauthorized manipulation of the process.
-  
 
-__Usage:__  
-linux: (sh)  
-```
-COMMAND>> ./opcua_cli #{opcua.server.endpoint} --port #{opcua.server.port} write "#{opcua.node.id}" #{opcua.write.value} --type #{opcua.write.type}
+__Ability Command:__
+<details open>
+<summary>Windows (psh)</summary>
+<br>
 
+```caldera
+.\opcua_cli.exe #{opcua.server.endpoint} --port #{opcua.server.port} write "#{opcua.node.id}" #{opcua.write.value} --type #{opcua.write.type}
 ```  
 
-__Facts:__  
-- `opcua.server.endpoint`: Target OPC-UA endpoint (host/IP, or a full opc.tcp:// URL)
-- `opcua.server.port`: Target OPC-UA TCP port (default 4840)
-- `opcua.node.id`: NodeId of the target node (read, or written for Write Node)
-- `opcua.write.value`: Value to write to the node
-- `opcua.write.type`: Data type of the written value (bool, int, float, string)
-windows: (psh)  
-```
-COMMAND>> .\opcua_cli.exe #{opcua.server.endpoint} --port #{opcua.server.port} write "#{opcua.node.id}" #{opcua.write.value} --type #{opcua.write.type}
+</details>
+<details>
+<summary>Linux (sh)</summary>
+<br>
 
+```caldera
+./opcua_cli #{opcua.server.endpoint} --port #{opcua.server.port} write "#{opcua.node.id}" #{opcua.write.value} --type #{opcua.write.type}
 ```  
 
-__Facts:__  
-- `opcua.server.endpoint`: Target OPC-UA endpoint (host/IP, or a full opc.tcp:// URL)
-- `opcua.server.port`: Target OPC-UA TCP port (default 4840)
-- `opcua.node.id`: NodeId of the target node (read, or written for Write Node)
-- `opcua.write.value`: Value to write to the node
-- `opcua.write.type`: Data type of the written value (bool, int, float, string)
-darwin: (sh)  
-```
-COMMAND>> ./opcua_cli_darwin #{opcua.server.endpoint} --port #{opcua.server.port} write "#{opcua.node.id}" #{opcua.write.value} --type #{opcua.write.type}
+</details>
+<details>
+<summary>Darwin (sh)</summary>
+<br>
 
+```caldera
+./opcua_cli_darwin #{opcua.server.endpoint} --port #{opcua.server.port} write "#{opcua.node.id}" #{opcua.write.value} --type #{opcua.write.type}
 ```  
 
+</details>
+<br>
+
 __Facts:__  
-- `opcua.server.endpoint`: Target OPC-UA endpoint (host/IP, or a full opc.tcp:// URL)
-- `opcua.server.port`: Target OPC-UA TCP port (default 4840)
-- `opcua.node.id`: NodeId of the target node (read, or written for Write Node)
-- `opcua.write.value`: Value to write to the node
-- `opcua.write.type`: Data type of the written value (bool, int, float, string)
+| Name | Description | Type |
+|:-----|:------------|:----:|
+| `opcua.server.endpoint` | Target OPC-UA endpoint (host/IP, or a full opc.tcp:// URL) | string |
+| `opcua.server.port` | Target OPC-UA TCP port (default 4840) | int |
+| `opcua.node.id` | NodeId of the target node (read, or written for Write Node) | string |
+| `opcua.write.value` | Value to write to the node | int |
+| `opcua.write.type` | Data type of the written value (bool, int, float, string) | string |
 
 ### Source Code
 The source code for the OPC-UA plugin can be found inside this plugin's [src directory](/src/).

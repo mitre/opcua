@@ -3,7 +3,7 @@
 > Contributed by Palo Alto Networks. This repository is not maintained by MITRE.
 
 A [Caldera for OT](https://github.com/mitre/caldera-ot) plugin supplying
-[Caldera](https://github.com/mitre/caldera) with **OPC Unified Architecture**
+[Apache Caldera](https://github.com/apache/caldera) with **OPC Unified Architecture**
 (OPC-UA) protocol TTPs mapped to MITRE ATT&CK® for ICS. This is part of a series of
 plugins that provide added threat emulation capability for Operational Technology
 (OT) environments.
@@ -29,7 +29,7 @@ fieldmanual, once the Caldera server is running.
 ## Installation
 
 To run Caldera along with the OPC-UA plugin:
-1. Download Caldera as detailed in the [Installation Guide](https://github.com/mitre/caldera)
+1. Download Apache Caldera as detailed in the [Installation Guide](https://github.com/apache/caldera)
 2. Install this plugin into Caldera's plugin directory as `caldera/plugins/opcua`.
    Clone the [Caldera for OT](https://github.com/mitre/caldera-ot) collection and
    move the `opcua` directory into place:
@@ -52,8 +52,7 @@ the target device by the Caldera agent. To execute, the payloads must be compati
 with the target device operating system. The Linux payload (`opcua_cli`) ships in
 [`payloads/`](payloads/); the Windows (`opcua_cli.exe`) and macOS
 (`opcua_cli_darwin`) payloads are produced by the build workflow in
-[`.github/workflows/ci.yaml`](.github/workflows/ci.yaml) and published as release
-assets. The Linux payload is built on Ubuntu 22.04 (`glibc` 2.35), so it requires
+[`.github/workflows/ci.yaml`](.github/workflows/ci.yaml) and committed into the plugin's [`payloads/`](payloads/) directory by the build workflow. The Linux payload is built on Ubuntu 22.04 (`glibc` 2.35), so it requires
 `glibc` 2.35 or greater; rebuilding it on an older distribution lowers that floor.
 For more information on compatibility, see the
 [fieldmanual documentation](docs/opcua.md#payload) and the
@@ -91,7 +90,7 @@ discovered nodes can seed later abilities.
 
 ## Authors
 
-This plugin was contributed by **Asher Davila** and **Malav Vyas**.
+This plugin was contributed by **Asher Davila** ([AsherDLL](https://github.com/AsherDLL)) and **Malav Vyas** ([malavvyas](https://github.com/malavvyas)) of Palo Alto Networks.
 
 ## License
 

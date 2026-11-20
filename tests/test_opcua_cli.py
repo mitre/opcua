@@ -1,4 +1,3 @@
-# SPDX-License-Identifier: Apache-2.0
 """Unit tests for the opcua_cli action library.
 
 Stands up a local asyncua server with a writable variable and drives it with

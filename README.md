@@ -1,6 +1,6 @@
 # Caldera for OT plugin: OPC-UA
 
-> Contributed by Palo Alto Networks. This repository is not maintained by MITRE.
+> Contributed by Palo Alto Networks. Not maintained by MITRE: the abilities and their pinned dependencies are frozen as contributed and will not be updated.
 
 A [Caldera for OT](https://github.com/mitre/caldera-ot) plugin supplying
 [Apache Caldera](https://github.com/apache/caldera) with **OPC Unified Architecture**

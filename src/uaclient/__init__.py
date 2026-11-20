@@ -1,4 +1,3 @@
-# SPDX-License-Identifier: Apache-2.0
 """A small OPC-UA client action library built on asyncua.
 
 Exposes OPCUAClient, a thin wrapper that turns the asyncua client API into the

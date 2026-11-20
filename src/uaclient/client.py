@@ -1,4 +1,3 @@
-# SPDX-License-Identifier: Apache-2.0
 """OPC-UA client actions, backed by asyncua.
 
 Transport-only: it takes node ids / values and has no knowledge of any particular

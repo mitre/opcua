@@ -1,5 +1,4 @@
 # -*- mode: python ; coding: utf-8 -*-
-# SPDX-License-Identifier: Apache-2.0
 # PyInstaller spec: bundle opcua_cli into a single executable, collecting asyncua
 # (and its data/submodules).
 from PyInstaller.utils.hooks import collect_all, collect_submodules
@@ -22,7 +21,7 @@ a = Analysis(
     hiddenimports=hiddenimports,
     hookspath=[],
     runtime_hooks=[],
-    excludes=[],
+    excludes=["readline", "_gdbm", "_dbm", "gdbm", "dbm", "tkinter"],
     cipher=block_cipher,
 )
 pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)

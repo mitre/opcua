@@ -23,7 +23,7 @@ function handleBoxExit(e){
 
 <template>
     <div>
-        <h2>{{ name }} Protocol Plugin</h2>
+        <h2>OPC-UA Protocol Plugin</h2>
         <p>{{ description }}</p>
     </div>
     <hr>
@@ -31,7 +31,7 @@ function handleBoxExit(e){
     <h3>Documentation</h3>
     <p>
         Get started by referencing the
-        <a :href="`/docs/plugins/${name.toLowerCase()}/${name.toLowerCase()}.html`" target="_blank">{{ name }} Plugin Fieldmanual</a>.
+        <a :href="`/docs/plugins/${name.toLowerCase()}/${name.toLowerCase()}.html`" target="_blank">OPC-UA Plugin Fieldmanual</a>.
     </p>
 
     <h3>Abilities</h3>
@@ -52,7 +52,7 @@ function handleBoxExit(e){
         </div>
     </div>
     <h3>Adversaries</h3>
-    <p>There are no custom {{ name }} adversaries at this time.</p>
+    <p>There are no custom OPC-UA adversaries at this time.</p>
 </template>
 
 <style scoped>

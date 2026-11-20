@@ -1,4 +1,3 @@
-# SPDX-License-Identifier: Apache-2.0
 """opcua_cli - a command-line OPC-UA client for adversary emulation.
 
 A generic client that speaks OPC-UA to any server. Transport-only (node ids /

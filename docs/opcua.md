@@ -41,7 +41,7 @@ The following table(s) list each plugin ability by their corresponding tactic.
 This section describes the main components of the plugin and how they interface.
 
 ### Block Diagram
-![block diagram](assets/opcua_diagram.jpg)
+![block diagram](assets/opcua_diagram.png)
 
 The OPC-UA plugin exposes several new protocol specific abilities to your Caldera instance. The abilities are executed from a host running a Caldera agent via the corresponding payload. Abilities must target devices that support the OPC-UA protocol to achieve described effects. By default the plugin will use __4840__ for all communication.
 
